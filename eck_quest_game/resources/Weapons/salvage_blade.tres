@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://bha1kvkgd6abw"]
+
+[ext_resource type="Script" uid="uid://derfx570s1kqo" path="res://scripts/weapon_resource.gd" id="1_wca6l"]
+
+[resource]
+script = ExtResource("1_wca6l")
+WeaponName = "Salvage Blade"
+PhyDmg = 5.0
+MgcDmg = 0.0
+IgnorePhyRes = false
+IgnoreMgcRes = false
+FireRate = 1.0
+ProjectileDuration = 2
+metadata/_custom_type_script = "uid://derfx570s1kqo"

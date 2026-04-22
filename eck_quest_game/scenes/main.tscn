@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://bla2diab3i87"]
+
+[ext_resource type="PackedScene" uid="uid://ck3onkal6b587" path="res://scenes/hub.tscn" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bpjc2olevi8g" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://ciqn0r1jpoehw" path="res://scripts/projectile_manager.gd" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://bfjvk6svfjfm8" path="res://scripts/stats.gd" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dh1sk1f811rx2" path="res://scenes/dps_dummy.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bgagf5tsqht0a" path="res://base_projectile.tscn" id="4_o6xl0"]
+[ext_resource type="Script" uid="uid://derfx570s1kqo" path="res://scripts/weapon_resource.gd" id="4_tefeu"]
+
+[sub_resource type="Resource" id="Resource_o6xl0"]
+resource_local_to_scene = true
+script = ExtResource("3_tbgi4")
+faction = 0
+base_max_health = 100.0
+base_def = 5.0
+base_atk = 5.0
+experience = 0
+metadata/_custom_type_script = "uid://bfjvk6svfjfm8"
+
+[sub_resource type="Resource" id="Resource_tipki"]
+resource_local_to_scene = true
+script = ExtResource("4_tefeu")
+weapon_name = "Salvage Sword"
+phy_dmg = 5.0
+mgc_dmg = 0.0
+ignore_phy_res = false
+ignore_mgc_res = false
+projectile_duration = 2
+projectile = ExtResource("4_o6xl0")
+metadata/_custom_type_script = "uid://derfx570s1kqo"
+
+[node name="world" type="Node"]
+
+[node name="Hub" parent="." instance=ExtResource("1_0wfyh")]
+
+[node name="Player" parent="." instance=ExtResource("1_o5qli")]
+slide_on_ceiling = false
+player_stats = SubResource("Resource_o6xl0")
+player_weapon = SubResource("Resource_tipki")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+
+[node name="ProjectileManager" type="Node" parent="." groups=["projectiles"]]
+script = ExtResource("3_sugp2")
+
+[node name="DpsDummy" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(73, -1)
