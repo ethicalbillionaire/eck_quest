@@ -5,7 +5,8 @@ class_name Stats extends Resource
 enum BuffableStats {
 	MAX_HEALTH,
 	DEF,
-	ATK
+	ATK,
+	WIS
 }
 
 enum Faction {
@@ -16,7 +17,8 @@ enum Faction {
 const STAT_CURVES: Dictionary[BuffableStats, Curve] = {
 	BuffableStats.MAX_HEALTH: preload("uid://0mlpjk6fpal6"),
 	BuffableStats.DEF: preload("uid://qvxqkp482p5d"),
-	BuffableStats.ATK: preload("uid://cj63tfqwliyle")
+	BuffableStats.ATK: preload("uid://cj63tfqwliyle"),
+	BuffableStats.WIS: preload("uid://crwii2iu22kwe")
 }
 
 const BASE_LEVEL_EXP: int = 100.0
@@ -26,20 +28,23 @@ signal health_changed(cur_health:float, max_health:float)
 
 @export var faction: Faction = Faction.PLAYER
 @export var base_max_health: float = 100.0
-@export var base_def: float = 10.0
-@export var base_atk: float = 10.0
+@export var base_def: float = 1.0
+@export var base_atk: float = 1.0
+@export var base_wis: float = 1.0
 @export var experience: int = 0: set = _on_exp_set
 
 var lvl: int:
 	get(): return floor(max(1, sqrt(experience / BASE_LEVEL_EXP) +0.5))
 
 var current_max_health: float = 100.0
-var current_def: float = 10.0
-var current_atk: float = 10.0
+var current_def: float = 1.0
+var current_atk: float = 1.0
+var current_wis: float = 1.0
 
 var health: float = 0.0: set = _on_health_set
 var def: float = 1.0
 var atk: float = 1.0
+var wis: float = 1.0
 
 var stat_buffs: Array[StatBuff]
 
@@ -51,6 +56,7 @@ func setup_stats() -> void:
 	health = current_max_health
 	def = current_def
 	atk = current_atk
+	wis = current_wis
 
 func buff_add(buff: StatBuff) -> void:
 	stat_buffs.append(buff)
@@ -80,6 +86,7 @@ func recalculate_stats() -> void:
 	current_max_health = base_max_health * STAT_CURVES[BuffableStats.MAX_HEALTH].sample(stat_sample_pos)
 	current_def = base_def * STAT_CURVES[BuffableStats.DEF].sample(stat_sample_pos)
 	current_atk = base_atk * STAT_CURVES[BuffableStats.ATK].sample(stat_sample_pos)
+	current_wis = base_wis * STAT_CURVES[BuffableStats.WIS].sample(stat_sample_pos)
 	
 	for stat_name in stat_multipliers:
 		var cur_property_name: String = str("current_" + stat_name)

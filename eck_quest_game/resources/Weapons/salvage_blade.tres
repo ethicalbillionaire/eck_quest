@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://bha1kvkgd6abw"]
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://bha1kvkgd6abw"]
 
+[ext_resource type="PackedScene" uid="uid://bgagf5tsqht0a" path="res://scenes/base_projectile.tscn" id="1_4ysd5"]
 [ext_resource type="Script" uid="uid://derfx570s1kqo" path="res://scripts/weapon_resource.gd" id="1_wca6l"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_wca6l")
-WeaponName = "Salvage Blade"
-PhyDmg = 5.0
-MgcDmg = 0.0
-IgnorePhyRes = false
-IgnoreMgcRes = false
-FireRate = 1.0
-ProjectileDuration = 2
+weapon_name = "Salvage Sword"
+phy_dmg = 5.0
+mgc_dmg = 0.0
+ignore_phy_res = false
+ignore_mgc_res = false
+range = 100
+projectile = ExtResource("1_4ysd5")
 metadata/_custom_type_script = "uid://derfx570s1kqo"

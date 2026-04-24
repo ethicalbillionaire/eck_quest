@@ -9,5 +9,5 @@ class_name WeaponResource extends Resource
 @export var mgc_dmg: float = 0.0
 @export var ignore_phy_res: bool = false # Ignore phsyical resistance
 @export var ignore_mgc_res: bool = false # Ignore magical resistance 
-@export var projectile_duration: int = 0 # Projectile lifetime
+@export var range: int = 10
 @export var projectile: PackedScene

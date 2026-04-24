@@ -1,4 +1,4 @@
-class_name Hurtbox extends Area2D
+class_name HurtBox extends Area2D
 
 @onready var owner_stats: Stats = owner.stats
 

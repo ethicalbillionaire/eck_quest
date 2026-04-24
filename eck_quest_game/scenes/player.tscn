@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://bpjc2olevi8g"]
+[gd_scene load_steps=31 format=3 uid="uid://bpjc2olevi8g"]
 
 [ext_resource type="Script" uid="uid://dpxyrmow5ta7i" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://uk1ksm4wyox2" path="res://assets/Tiny RPG Paid/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Attack03.png" id="2_dqkch"]
+[ext_resource type="Resource" uid="uid://fmkr058p8i8h" path="res://resources/player_stats.tres" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://c488fnvemqf8f" path="res://assets/Tiny RPG Paid/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Idle.png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://vivffh8pss73" path="res://assets/Tiny RPG Paid/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Walk.png" id="4_tuyoq"]
 
@@ -129,7 +130,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 30.0
+"speed": 17.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -188,10 +189,11 @@ animations = [{
 size = Vector2(1.9154, 3.37204)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_layer = 0
+collision_layer = 17
 collision_mask = 257
 motion_mode = 1
 script = ExtResource("1_qhqgy")
+player_stats = ExtResource("2_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dw050")

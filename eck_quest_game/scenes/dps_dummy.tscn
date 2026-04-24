@@ -1,16 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://dh1sk1f811rx2"]
+[gd_scene load_steps=19 format=3 uid="uid://dh1sk1f811rx2"]
 
 [ext_resource type="Texture2D" uid="uid://b0ncp7t1m7ens" path="res://assets/Tiny RPG Paid/Characters(100x100)/Slime/Slime with shadows/Slime-Idle.png" id="1_5a6np"]
 [ext_resource type="Script" uid="uid://6tfnyqqw3ga4" path="res://scripts/dps_dummy.gd" id="1_hn3j5"]
 [ext_resource type="Script" uid="uid://bfjvk6svfjfm8" path="res://scripts/stats.gd" id="2_8cuvl"]
 [ext_resource type="Texture2D" uid="uid://dca2i6f0agkbm" path="res://assets/Tiny RPG Paid/Characters(100x100)/Slime/Slime with shadows/Slime-Hurt.png" id="2_v0vvf"]
+[ext_resource type="Script" uid="uid://bficyjpphp34l" path="res://scripts/hurtbox.gd" id="3_t0wdu"]
 
 [sub_resource type="Resource" id="Resource_t0wdu"]
+resource_local_to_scene = true
 script = ExtResource("2_8cuvl")
 faction = 1
 base_max_health = 99999.0
 base_def = 1000.0
 base_atk = -1000.0
+base_wis = 1.0
 experience = 0
 metadata/_custom_type_script = "uid://bfjvk6svfjfm8"
 
@@ -101,10 +104,15 @@ animations = [{
 radius = 9.0
 
 [node name="DpsDummy" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 8
+collision_layer = 34
+collision_mask = 0
+safe_margin = 0.001
 script = ExtResource("1_hn3j5")
 stats = SubResource("Resource_t0wdu")
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("3_t0wdu")
+metadata/_custom_type_script = "uid://bficyjpphp34l"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fyhso")

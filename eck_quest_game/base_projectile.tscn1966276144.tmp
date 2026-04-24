@@ -11,13 +11,13 @@ height = 21.2132
 [node name="base_projectile" type="Area2D"]
 script = ExtResource("1_fs1wt")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_if21u")
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("3_8v1ul")
+metadata/_custom_type_script = "uid://dhf6bctlfum0m"
 
 [node name="HitShape" type="CollisionShape2D" parent="."]
 rotation = 0.785398
 shape = SubResource("CapsuleShape2D_if21u")
 
-[node name="Hitbox" type="Area2D" parent="."]
-script = ExtResource("3_8v1ul")
-metadata/_custom_type_script = "uid://dhf6bctlfum0m"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_if21u")

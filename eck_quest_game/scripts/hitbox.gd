@@ -1,4 +1,4 @@
-class_name Hitbox extends Area2D
+class_name HitBox extends Area2D
 ## Hitbox class for projectiles
 ## 
 ## _init() expects:
@@ -6,24 +6,20 @@ class_name Hitbox extends Area2D
 ##   Lifetime: int,
 ##   [Shape: Shape2D]
 
-var attacker_stats: Stats
-var lifetime: float
+var attacker_faction: int
+var payload: Payload
+var range: int
 var shape: CollisionShape2D
 
-func _init(_stats: Stats, _hitbox_lifetime: float, _shape: CollisionShape2D = null):
-	attacker_stats = _stats
-	lifetime = _hitbox_lifetime
+func build_hitbox(_attacker_faction: int, _payload: Payload, _shape: CollisionShape2D) -> void:
+	attacker_faction = _attacker_faction
+	payload = _payload
+	range = _payload.range
 	shape = _shape
 
 func _ready():
 	monitorable = false
 	area_entered.connect(_on_area_entered)
-	
-	if lifetime > 0.0:
-		var new_timer = Timer.new()
-		add_child(new_timer)
-		new_timer.timeout.connect(queue_free)
-		new_timer.call_deferred("start", lifetime)
 	
 	if shape:
 		var collision_shape = CollisionShape2D.new()
@@ -33,7 +29,7 @@ func _ready():
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
 	
-	match attacker_stats.faction:
+	match attacker_faction:
 		Stats.Faction.PLAYER:
 			set_collision_mask_value(6, true)
 		
@@ -44,4 +40,4 @@ func _on_area_entered(area: Area2D) -> void:
 	print("projectile entered area")
 	if not area.has_method("receive_hit"):
 		return
-	area.receive_hit(attacker_stats.atk)
+	area.receive_hit(payload.phy_damage, payload.mgc_damage)

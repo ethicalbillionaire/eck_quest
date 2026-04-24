@@ -1,10 +1,12 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var player_stats: Stats
-@export var player_weapon: WeaponResource
+@export var player_weapon: WeaponResource = preload("uid://bha1kvkgd6abw")
 @export var move_speed := 100.0
 
-signal shoot_projectile(spawn_pos: Vector2, mouse_pos: Vector2, stats: Stats, weapon: WeaponResource)
+signal shoot_projectile(spawn_pos: Vector2, mouse_pos: Vector2)
+signal weapon_change(player_stats: Stats, new_weapon: WeaponResource)
+signal stat_change(player_stats: Stats)
 
 var animated_sprite: AnimatedSprite2D
 var move_direction: Vector2 = Vector2.DOWN
@@ -51,7 +53,7 @@ func flip_sprite(direction: Vector2) -> void:
 func _attack() -> void:
 	if not player_sm.get_active_state().name == "attack":
 		return
-	shoot_projectile.emit(Vector2.ZERO, get_local_mouse_position(), player_stats, player_weapon)
+	shoot_projectile.emit(self.global_position, (get_global_mouse_position()-self.position).normalized())
 
 func initiate_state_machine() -> void:
 	player_sm = LimboHSM.new()
