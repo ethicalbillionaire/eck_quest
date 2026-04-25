@@ -26,9 +26,6 @@ func _ready() -> void:
 func launch(spawn_pos: Vector2, dir: Vector2, payload: Payload, player_stats: Stats) -> void:
 	_spawn_pos = spawn_pos
 	_payload = payload
-	#print("Projectile launched")
-	#print("{phy} Phy. out".format({"phy": str(payload.phy_damage)}))
-	#print("{mgc} Mgc. out".format({"mgc": str(payload.mgc_damage)}))
 	# Hitbox stuff
 	hitbox.build_hitbox(player_stats.faction, _payload, hitbox_shape)
 	# Launch direction
@@ -44,5 +41,4 @@ func _physics_process(delta: float) -> void:
 
 func _on_hit(collision: Area2D) -> void:
 	# deal damage
-	print("projectile hit something")
 	queue_free()

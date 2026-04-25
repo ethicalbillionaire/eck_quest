@@ -1,4 +1,4 @@
-class_name Payload extends Node2D
+class_name Payload extends RefCounted
 
 var phy_damage: float = 0
 var mgc_damage: float = 0

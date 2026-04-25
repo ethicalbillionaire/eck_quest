@@ -1,10 +1,4 @@
 class_name HitBox extends Area2D
-## Hitbox class for projectiles
-## 
-## _init() expects:
-##   AttackerStats: Stats,
-##   Lifetime: int,
-##   [Shape: Shape2D]
 
 var attacker_faction: int
 var payload: Payload
@@ -37,7 +31,6 @@ func _ready():
 			set_collision_mask_value(5, true)
 
 func _on_area_entered(area: Area2D) -> void:
-	print("projectile entered area")
 	if not area.has_method("receive_hit"):
 		return
-	area.receive_hit(payload.phy_damage, payload.mgc_damage)
+	area.receive_hit(payload)

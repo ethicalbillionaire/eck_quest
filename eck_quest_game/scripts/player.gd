@@ -16,7 +16,6 @@ var projectile_timer: Timer
 
 func _ready() -> void:
 	animated_sprite = $AnimatedSprite2D
-	player_stats.setup_stats()
 	initiate_state_machine()
 	
 	# Setup rate of fire 
