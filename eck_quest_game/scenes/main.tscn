@@ -9,10 +9,10 @@
 [sub_resource type="Resource" id="Resource_tefeu"]
 resource_local_to_scene = true
 script = ExtResource("3_tbgi4")
-faction = 1
+faction = 0
 max_health = 100.0
 def = 0.0
-atk = 0.0
+atk = 5.0
 wis = 0.0
 intel = 0.0
 metadata/_custom_type_script = "uid://bfjvk6svfjfm8"

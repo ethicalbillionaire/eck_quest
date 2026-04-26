@@ -1,8 +1,8 @@
 class_name ItemResource extends Resource
 
 @export var item_name: String
-@export var stackable: bool = true
-@export var max_count: int
+@export var stackable: bool = false
+@export var max_count: int = 1
 var now_count: int
 
 func add_count(amount: int) -> void:

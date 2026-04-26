@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bfjvk6svfjfm8" path="res://scripts/stats.gd" id="1_wld0n"]
 
 [resource]
-resource_local_to_scene = true
 script = ExtResource("1_wld0n")
 faction = 0
 max_health = 200.0

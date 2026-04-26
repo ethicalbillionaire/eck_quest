@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="InventoryResource" load_steps=3 format=3 uid="uid://pirfy2ekoe4i"]
+[gd_resource type="Resource" script_class="InventoryResource" load_steps=4 format=3 uid="uid://pirfy2ekoe4i"]
 
+[ext_resource type="Resource" uid="uid://dlypk65kstnwb" path="res://resources/Armor/salvage_leather.tres" id="1_1njko"]
 [ext_resource type="Script" uid="uid://cf73m8sf35dfp" path="res://scripts/inventory_resource.gd" id="2_1njko"]
 [ext_resource type="Resource" uid="uid://bha1kvkgd6abw" path="res://resources/Weapons/salvage_blade.tres" id="2_uptie"]
 
 [resource]
-resource_local_to_scene = true
 script = ExtResource("2_1njko")
 weapon = ExtResource("2_uptie")
+armor = ExtResource("1_1njko")
 bag_size = 8
 metadata/_custom_type_script = "uid://cf73m8sf35dfp"
