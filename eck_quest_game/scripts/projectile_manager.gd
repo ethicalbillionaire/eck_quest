@@ -1,6 +1,7 @@
-extends Node
+class_name ProjectilManager extends Node
 
 var player_stats: Stats
+var player_inventory: InventoryResource
 var player_weapon: WeaponResource
 var payload: Payload = Payload.new()
 
@@ -10,7 +11,8 @@ func _ready() -> void:
 	player.weapon_change.connect(_update_payload)
 	player.stat_change.connect(_update_payload)
 	player_stats = player.player_stats
-	player_weapon = player.player_weapon
+	player_inventory = player.player_inventory
+	player_weapon = player_inventory.weapon
 	_update_payload(player_stats, player_weapon)
 
 func _update_payload(new_stats: Stats, new_weapon: WeaponResource = null) -> void:

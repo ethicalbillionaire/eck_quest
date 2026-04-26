@@ -10,7 +10,7 @@ height = 21.2132
 
 [node name="base_projectile" type="Area2D"]
 collision_layer = 8
-collision_mask = 548
+collision_mask = 567
 script = ExtResource("1_625mw")
 
 [node name="Hitbox" type="Area2D" parent="."]

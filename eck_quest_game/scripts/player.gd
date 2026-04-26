@@ -1,7 +1,8 @@
 class_name Player extends CharacterBody2D
 
 @export var player_stats: Stats
-@export var player_weapon: WeaponResource = preload("uid://bha1kvkgd6abw")
+@export var player_inventory: InventoryResource = preload("uid://pirfy2ekoe4i")
+#@export var player_weapon: WeaponResource = preload("uid://bha1kvkgd6abw")
 @export var move_speed := 100.0
 
 @onready var interact_label: Label = $InteractLabel

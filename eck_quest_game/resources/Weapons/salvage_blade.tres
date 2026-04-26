@@ -6,11 +6,13 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_wca6l")
-weapon_name = "Salvage Sword"
 phy_dmg = 5.0
 mgc_dmg = 0.0
 ignore_phy_res = false
 ignore_mgc_res = false
 range = 100
 projectile = ExtResource("1_4ysd5")
+item_name = "Salvage Blade"
+stackable = false
+max_count = 0
 metadata/_custom_type_script = "uid://derfx570s1kqo"
