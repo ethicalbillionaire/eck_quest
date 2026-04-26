@@ -11,7 +11,7 @@ signal health_depleted
 
 @export var faction: Faction = Faction.ENEMY
 @export var max_health: float = 100.0
-var health: float = max_health: set = _on_health_set
+var health: float = 0.0: set = _on_health_set
 
 # Physical
 @export var def: float = 0.0

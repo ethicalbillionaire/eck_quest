@@ -3,12 +3,11 @@
 [ext_resource type="Script" uid="uid://bfjvk6svfjfm8" path="res://scripts/stats.gd" id="1_wld0n"]
 
 [resource]
-resource_local_to_scene = true
 script = ExtResource("1_wld0n")
 faction = 0
-base_max_health = 200.0
-base_def = 5.0
-base_atk = 5.0
-base_wis = 5.0
-experience = 1
+max_health = 200.0
+def = 10.0
+atk = 10.0
+wis = 10.0
+intel = 10.0
 metadata/_custom_type_script = "uid://bfjvk6svfjfm8"

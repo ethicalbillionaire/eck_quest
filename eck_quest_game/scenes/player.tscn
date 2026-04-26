@@ -1,10 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://bpjc2olevi8g"]
+[gd_scene load_steps=32 format=3 uid="uid://bpjc2olevi8g"]
 
 [ext_resource type="Script" uid="uid://dpxyrmow5ta7i" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://uk1ksm4wyox2" path="res://assets/Tiny RPG Paid/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Attack03.png" id="2_dqkch"]
 [ext_resource type="Resource" uid="uid://fmkr058p8i8h" path="res://resources/player_stats.tres" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://c488fnvemqf8f" path="res://assets/Tiny RPG Paid/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Idle.png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://vivffh8pss73" path="res://assets/Tiny RPG Paid/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Walk.png" id="4_tuyoq"]
+[ext_resource type="FontFile" uid="uid://djivv4owwydax" path="res://assets/Fonts/VCR_OSD_MONO_1.001.ttf" id="6_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("2_dqkch")
@@ -185,10 +186,12 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
-size = Vector2(1.9154, 3.37204)
+[sub_resource type="CircleShape2D" id="CircleShape2D_tuyoq"]
+radius = 6.84458
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
+y_sort_enabled = true
 collision_layer = 17
 collision_mask = 257
 motion_mode = 1
@@ -199,7 +202,16 @@ player_stats = ExtResource("2_qlg0r")
 sprite_frames = SubResource("SpriteFrames_dw050")
 animation = &"attack"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.90735e-06)
-scale = Vector2(4.17667, 4.15179)
-shape = SubResource("RectangleShape2D_qlg0r")
+[node name="BodyCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+scale = Vector2(0.714631, 0.208489)
+shape = SubResource("CircleShape2D_tuyoq")
+
+[node name="InteractLabel" type="Label" parent="."]
+offset_left = 6.0
+offset_top = -13.0
+offset_right = 786.0
+offset_bottom = 94.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("6_tuyoq")
+theme_override_font_sizes/font_size = 121

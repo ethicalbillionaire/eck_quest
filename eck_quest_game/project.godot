@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Underealm"
+config/name="Eck Quest"
 run/main_scene="uid://bla2diab3i87"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
@@ -61,6 +61,7 @@ mouse1={
 2d_physics/layer_6="EnemyHurtBox"
 2d_physics/layer_9="Pits"
 2d_physics/layer_10="Walls"
+2d_physics/layer_11="Doors"
 
 [rendering]
 

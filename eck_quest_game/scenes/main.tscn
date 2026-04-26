@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bfjvk6svfjfm8" path="res://scripts/stats.gd" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dh1sk1f811rx2" path="res://scenes/dps_dummy.tscn" id="4_jyhfs"]
 
-[sub_resource type="Resource" id="Resource_o6xl0"]
+[sub_resource type="Resource" id="Resource_tefeu"]
 resource_local_to_scene = true
 script = ExtResource("3_tbgi4")
 faction = 1
@@ -28,13 +28,14 @@ wis = 0.0
 intel = 0.0
 metadata/_custom_type_script = "uid://bfjvk6svfjfm8"
 
-[node name="world" type="Node"]
+[node name="world" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Hub" parent="." instance=ExtResource("1_0wfyh")]
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
 slide_on_ceiling = false
-player_stats = SubResource("Resource_o6xl0")
+player_stats = SubResource("Resource_tefeu")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)

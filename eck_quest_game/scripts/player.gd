@@ -4,6 +4,8 @@ class_name Player extends CharacterBody2D
 @export var player_weapon: WeaponResource = preload("uid://bha1kvkgd6abw")
 @export var move_speed := 100.0
 
+@onready var interact_label: Label = $InteractLabel
+
 signal shoot_projectile(spawn_pos: Vector2, mouse_pos: Vector2)
 signal weapon_change(player_stats: Stats, new_weapon: WeaponResource)
 signal stat_change(player_stats: Stats)
@@ -42,6 +44,13 @@ func _physics_process(delta: float) -> void:
 		flip_sprite(attack_direction)
 	else:
 		flip_sprite(move_direction)
+
+func prompt_interaction(text: String) -> void:
+	interact_label.text = "[E] {interaction}".format({"interaction": text})
+	interact_label.visible = true
+
+func remove_prompt() -> void:
+	interact_label.visible = false
 
 func flip_sprite(direction: Vector2) -> void:
 	if direction.x > 0: #RIGHT

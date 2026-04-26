@@ -22,7 +22,9 @@ func _update_payload(new_stats: Stats, new_weapon: WeaponResource = null) -> voi
 		if (new_weapon.ignore_phy_res or new_weapon.ignore_mgc_res):
 			payload.ignore_phy_res = new_weapon.ignore_phy_res
 			payload.ignore_mgc_res = new_weapon.ignore_mgc_res
-		
+	
+	print("Attack stat: {atk}".format({"atk":player_stats.atk}))
+	print(player_stats.resource_path)
 	payload.phy_damage = player_weapon.phy_dmg * (1 + (player_stats.atk * 0.01))
 	payload.mgc_damage = player_weapon.mgc_dmg * (1 +(player_stats.wis * 0.01))
 	
