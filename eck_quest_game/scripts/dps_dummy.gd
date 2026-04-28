@@ -16,7 +16,6 @@ func _physics_process(delta: float) -> void:
 func take_damage(payload: Payload):
 	var total_dmg: float = calculate_damage(payload)
 	show_damage(total_dmg)
-	stats.health -= total_dmg
 
 func calculate_damage(payload: Payload) -> float:
 	const k = 50.0

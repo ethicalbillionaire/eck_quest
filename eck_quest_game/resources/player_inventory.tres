@@ -10,5 +10,14 @@ script = ExtResource("2_1njko")
 weapon = ExtResource("2_uptie")
 armor = ExtResource("1_1njko")
 bag_size = 8
-item_bag = Array[ExtResource("2_85a8j")]([null, null, null, null, null, null, null, null])
+item_bag = Dictionary[int, ExtResource("2_85a8j")]({
+1: null,
+2: null,
+3: null,
+4: null,
+5: null,
+6: null,
+7: null,
+8: null
+})
 metadata/_custom_type_script = "uid://cf73m8sf35dfp"

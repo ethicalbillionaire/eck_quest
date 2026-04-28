@@ -18,7 +18,7 @@ func add_count(amount: int) -> void:
 	else:
 		count += amount
 
-func remove_count(amount: int) -> void:
+func lower_count(amount: int) -> void:
 	if count > 0:
 		if (count - amount) < 0:
 			count = 0

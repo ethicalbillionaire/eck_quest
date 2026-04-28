@@ -33,11 +33,13 @@ func add_item(item: ItemResource, inventory_position: int = -1) -> void:
 				inventory_change.emit()
 				return
 				
-	item_bag.set(0, item)
+	item_bag.set(get_first_empty_slot(), item)
 	inventory_change.emit()
 	
 func remove_item(item: ItemResource) -> void:
-	if get_first_empty_slot() == 0:
-		for inv_item: ItemResource in item_bag.values():
-			if item != inv_item:
-				pass
+	if item_bag.values().has(item):
+		var idx: int = item_bag.find_key(item)
+		if item_bag[idx].count > 1:
+			item_bag[idx].lower_count(1)
+		else:
+			item_bag[idx] = null

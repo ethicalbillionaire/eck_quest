@@ -7,25 +7,15 @@
 [ext_resource type="Script" uid="uid://bfjvk6svfjfm8" path="res://scripts/stats.gd" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dh1sk1f811rx2" path="res://scenes/dps_dummy.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://b6umtvlejips4" path="res://scripts/inventory_ui.gd" id="6_tefeu"]
+[ext_resource type="Resource" uid="uid://bf7adm175du6l" path="res://resources/dps_dummy_stats.tres" id="7_tipki"]
 
-[sub_resource type="Resource" id="Resource_tefeu"]
+[sub_resource type="Resource" id="Resource_o6xl0"]
 resource_local_to_scene = true
 script = ExtResource("3_tbgi4")
 faction = 0
 max_health = 100.0
 def = 0.0
 atk = 5.0
-wis = 0.0
-intel = 0.0
-metadata/_custom_type_script = "uid://bfjvk6svfjfm8"
-
-[sub_resource type="Resource" id="Resource_tbgi4"]
-resource_local_to_scene = true
-script = ExtResource("3_tbgi4")
-faction = 1
-max_health = 100.0
-def = 0.0
-atk = 0.0
 wis = 0.0
 intel = 0.0
 metadata/_custom_type_script = "uid://bfjvk6svfjfm8"
@@ -38,7 +28,7 @@ script = ExtResource("1_o6xl0")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
 slide_on_ceiling = false
-player_stats = SubResource("Resource_tefeu")
+player_stats = SubResource("Resource_o6xl0")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -50,7 +40,7 @@ script = ExtResource("3_sugp2")
 
 [node name="DpsDummy" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(73, -1)
-stats = SubResource("Resource_tbgi4")
+stats = ExtResource("7_tipki")
 
 [node name="UI Layer" type="CanvasLayer" parent="."]
 
