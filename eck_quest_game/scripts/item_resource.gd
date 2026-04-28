@@ -1,19 +1,26 @@
 class_name ItemResource extends Resource
 
 @export var item_name: String
+@export var item_sprite: Texture2D
 @export var stackable: bool = false
 @export var max_count: int = 1
-var now_count: int
+var count: int
 
+func stacks_available() -> int:
+	return max_count - count
+		
+func is_full() -> bool:
+	return stackable and (count == max_count)
+	
 func add_count(amount: int) -> void:
-	if (now_count + amount) >= max_count:
-		now_count = max_count
+	if (count + amount) >= max_count:
+		count = max_count
 	else:
-		now_count += amount
+		count += amount
 
 func remove_count(amount: int) -> void:
-	if now_count > 0:
-		if (now_count - amount) < 0:
-			now_count = 0
+	if count > 0:
+		if (count - amount) < 0:
+			count = 0
 		else:
-			now_count -= amount
+			count -= amount

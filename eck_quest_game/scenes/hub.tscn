@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://6dnne5yuhev7" path="res://assets/DungeonGathering/Set 1.0.png" id="1_qssp3"]
 [ext_resource type="Texture2D" uid="uid://cvu8gq306e53b" path="res://assets/DungeonGathering/Set 1.png" id="2_d1od2"]
-[ext_resource type="Script" uid="uid://cx3lmumcv0gmu" path="res://scenes/dungeon_door.gd" id="3_w6xti"]
+[ext_resource type="Script" uid="uid://cx3lmumcv0gmu" path="res://scripts/dungeon_door.gd" id="3_w6xti"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1od2"]
 resource_name = "dungeon_walls"
