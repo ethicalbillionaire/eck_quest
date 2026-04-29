@@ -1,16 +1,14 @@
-[gd_resource type="Resource" script_class="InventoryResource" load_steps=5 format=3 uid="uid://pirfy2ekoe4i"]
+[gd_resource type="Resource" script_class="InventoryResource" load_steps=4 format=3 uid="uid://pirfy2ekoe4i"]
 
-[ext_resource type="Resource" uid="uid://dlypk65kstnwb" path="res://resources/Armor/salvage_leather.tres" id="1_1njko"]
-[ext_resource type="Script" uid="uid://cf73m8sf35dfp" path="res://scripts/inventory_resource.gd" id="2_1njko"]
-[ext_resource type="Script" uid="uid://cxgmgr3rtoouc" path="res://scripts/item_resource.gd" id="2_85a8j"]
+[ext_resource type="Script" uid="uid://cxgmgr3rtoouc" path="res://scripts/items/item_resource.gd" id="1_1njko"]
+[ext_resource type="Script" uid="uid://cf73m8sf35dfp" path="res://scripts/inventory/inventory_resource.gd" id="2_85a8j"]
 [ext_resource type="Resource" uid="uid://bha1kvkgd6abw" path="res://resources/Weapons/salvage_blade.tres" id="2_uptie"]
 
 [resource]
-script = ExtResource("2_1njko")
+script = ExtResource("2_85a8j")
 weapon = ExtResource("2_uptie")
-armor = ExtResource("1_1njko")
 bag_size = 8
-item_bag = Dictionary[int, ExtResource("2_85a8j")]({
+item_bag = Dictionary[int, ExtResource("1_1njko")]({
 1: null,
 2: null,
 3: null,

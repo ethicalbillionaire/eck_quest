@@ -61,7 +61,7 @@ func flip_sprite(direction: Vector2) -> void:
 func _attack() -> void:
 	if not player_sm.get_active_state().name == "attack":
 		return
-	shoot_projectile.emit(self.global_position, (get_global_mouse_position()-self.position).normalized())
+	shoot_projectile.emit(self.global_position, (get_global_mouse_position()-self.global_position).normalized())
 
 func initiate_state_machine() -> void:
 	player_sm = LimboHSM.new()

@@ -39,49 +39,40 @@ y_sort_enabled = true
 script = ExtResource("1_o6xl0")
 
 [node name="Hub" parent="." instance=ExtResource("1_0wfyh")]
-position = Vector2(541, 324)
-scale = Vector2(3.42596, 3.42596)
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(541, 324)
-scale = Vector2(3.42596, 3.42596)
 slide_on_ceiling = false
 player_stats = SubResource("Resource_ya4ey")
-move_speed = 200.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(35, 0)
+zoom = Vector2(3.5, 3.5)
 
 [node name="ColorRect" type="ColorRect" parent="Player/Camera2D"]
 z_index = 9
-offset_left = 116.756
-offset_top = -94.5721
-offset_right = 156.756
-offset_bottom = -54.5721
-scale = Vector2(1.541, 4.74001)
+offset_left = 117.0
+offset_top = -93.0
+offset_right = 157.0
+offset_bottom = -53.0
+scale = Vector2(2.07232, 4.64523)
 color = Color(0.0976001, 0.0248259, 0.0058067, 1)
-metadata/_edit_use_anchors_ = true
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(541, 324)
-scale = Vector2(3.42596, 3.42596)
 
 [node name="ProjectileManager" type="Node" parent="." groups=["projectiles"]]
 script = ExtResource("3_sugp2")
 
 [node name="DpsDummy" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(614, 323)
-scale = Vector2(3.42596, 3.42596)
+position = Vector2(73, -1)
 stats = SubResource("Resource_tbgi4")
 
 [node name="UI Layer" type="CanvasLayer" parent="."]
 
 [node name="InventoryUI" type="PanelContainer" parent="UI Layer"]
-offset_left = 954.0
-offset_top = 327.0
-offset_right = 1030.0
-offset_bottom = 343.0
-scale = Vector2(2.43525, 2.43525)
+offset_left = 120.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 20.0
 script = ExtResource("6_tefeu")
 
 [node name="EquipmentSlots" type="HBoxContainer" parent="UI Layer/InventoryUI"]
@@ -93,32 +84,20 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 script = ExtResource("8_tipki")
 
-[node name="TextureRect" type="TextureRect" parent="UI Layer/InventoryUI/EquipmentSlots/WeaponSlot"]
-layout_mode = 2
-
 [node name="AbilitySlot" type="PanelContainer" parent="UI Layer/InventoryUI/EquipmentSlots"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 script = ExtResource("9_85g3d")
-
-[node name="TextureRect" type="TextureRect" parent="UI Layer/InventoryUI/EquipmentSlots/AbilitySlot"]
-layout_mode = 2
 
 [node name="ArmorSlot" type="PanelContainer" parent="UI Layer/InventoryUI/EquipmentSlots"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 script = ExtResource("10_choun")
 
-[node name="TextureRect" type="TextureRect" parent="UI Layer/InventoryUI/EquipmentSlots/ArmorSlot"]
-layout_mode = 2
-
 [node name="TrinketSlot" type="PanelContainer" parent="UI Layer/InventoryUI/EquipmentSlots"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 script = ExtResource("11_ya4ey")
-
-[node name="TextureRect" type="TextureRect" parent="UI Layer/InventoryUI/EquipmentSlots/TrinketSlot"]
-layout_mode = 2
 
 [node name="BagGrid" type="GridContainer" parent="UI Layer/InventoryUI"]
 layout_mode = 2

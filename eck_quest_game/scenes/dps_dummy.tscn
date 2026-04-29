@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://dh1sk1f811rx2"]
 
 [ext_resource type="Texture2D" uid="uid://b0ncp7t1m7ens" path="res://assets/Tiny RPG Paid/Characters(100x100)/Slime/Slime with shadows/Slime-Idle.png" id="1_5a6np"]
-[ext_resource type="Script" uid="uid://6tfnyqqw3ga4" path="res://scripts/dps_dummy.gd" id="1_hn3j5"]
-[ext_resource type="Script" uid="uid://bfjvk6svfjfm8" path="res://scripts/stats.gd" id="2_8cuvl"]
+[ext_resource type="Script" uid="uid://6tfnyqqw3ga4" path="res://scripts/hub/dps_dummy.gd" id="1_hn3j5"]
+[ext_resource type="Script" uid="uid://bfjvk6svfjfm8" path="res://scripts/character/stats.gd" id="2_8cuvl"]
 [ext_resource type="Texture2D" uid="uid://dca2i6f0agkbm" path="res://assets/Tiny RPG Paid/Characters(100x100)/Slime/Slime with shadows/Slime-Hurt.png" id="2_v0vvf"]
-[ext_resource type="Script" uid="uid://bficyjpphp34l" path="res://scripts/hurtbox.gd" id="3_t0wdu"]
+[ext_resource type="Script" uid="uid://bficyjpphp34l" path="res://scripts/character/hurtbox.gd" id="3_t0wdu"]
 
 [sub_resource type="Resource" id="Resource_t0wdu"]
 resource_local_to_scene = true

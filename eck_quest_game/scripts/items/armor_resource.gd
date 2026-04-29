@@ -1,5 +1,5 @@
 class_name ArmorResource extends ItemResource
-## Class for armor items
+## Equippable in the character's armor slot
 
 # Armor reduces incoming physical damage
 @export var armor: int = 0

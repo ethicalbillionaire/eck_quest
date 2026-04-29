@@ -7,12 +7,13 @@ enum Faction {
 	ENEMY
 }
 
-var speed = 300.0
+var speed = 700.0
 var direction: Vector2
 var attacker_stats: Stats
 var attacker_faction: Faction
 var _payload: Payload
-var range: int = 10
+var range: int = 100
+
 var hitbox: HitBox
 var hitbox_shape: CollisionShape2D
 var _distance_traveled: float

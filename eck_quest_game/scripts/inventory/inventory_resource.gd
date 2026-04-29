@@ -1,11 +1,15 @@
 class_name InventoryResource extends Resource
 
-signal inventory_change
+signal bag_change(bag: Dictionary[int, ItemResource])
+signal weapon_change(weapon: WeaponResource)
+signal ability_change(ability: AbilityResource)
+signal armor_change(armor: ArmorResource)
+signal trinket_change(trinket: TrinketResource)
 
 @export var weapon: WeaponResource
-@export var ability: ItemResource
+@export var ability: AbilityResource
 @export var armor: ArmorResource
-@export var trinket: ItemResource
+@export var trinket: TrinketResource
 
 @export var bag_size: int = 8
 @export var item_bag: Dictionary[int, ItemResource] = {
@@ -28,13 +32,17 @@ func add_item(item: ItemResource, inventory_position: int = -1) -> void:
 	# look for stack options in the inventory
 	if item.stackable:
 		for inv_item: ItemResource in item_bag.values():
-			if (item.item_name == inv_item.item_name) and (inv_item.count < inv_item.max_count):
-				inv_item.up_count()
-				inventory_change.emit()
-				return
-				
-	item_bag.set(get_first_empty_slot(), item)
-	inventory_change.emit()
+			if inv_item != null:
+				if (item.item_name == inv_item.item_name) and (inv_item.count < inv_item.max_count):
+					inv_item.up_count()
+					bag_change.emit()
+					return
+	
+	if inventory_position < 0:
+		item_bag[get_first_empty_slot()] = item
+	else:
+		item_bag[inventory_position] = item
+	bag_change.emit()
 	
 func remove_item(item: ItemResource) -> void:
 	if item_bag.values().has(item):
